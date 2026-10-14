@@ -39,7 +39,18 @@ Não precisa de build. Servir a pasta por HTTP (o service worker e a câmara exi
 python3 -m http.server 8000   # abrir http://localhost:8000
 ```
 
-Para publicar, basta GitHub Pages (ou qualquer alojamento estático) sobre esta pasta.
+## Publicar no Cloudflare Pages
+
+Site estático, sem build. No painel da Cloudflare: **Workers & Pages → Create → Pages → Connect to Git**,
+escolher este repositório e usar:
+
+- **Production branch:** a branch a publicar (ex.: `main`)
+- **Build command:** *(vazio)*
+- **Build output directory:** `/`
+
+Ou, por linha de comandos: `npx wrangler pages deploy . --project-name leitura-de-prova`.
+O ficheiro `_headers` já configura cache e segurança. A Cloudflare dá um endereço `https://<nome>.pages.dev`
+(HTTPS, necessário para câmara e instalação no ecrã principal), que se envia à colega.
 Num telemóvel/tablet pode "Adicionar ao ecrã principal".
 
 ## Testes
