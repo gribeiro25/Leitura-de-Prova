@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leitura de Prova</title>
+  <meta name="description" content="Leitura de enunciados em voz alta para alunos com medidas de adaptação à avaliação.">
+  <meta name="theme-color" content="#1f5fbf">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app" aria-live="polite"></main>
+
+  <dialog id="progress" aria-labelledby="progress-title">
+    <h2 id="progress-title">A processar…</h2>
+    <p id="progress-msg"></p>
+    <progress id="progress-bar" max="100" value="0"></progress>
+  </dialog>
+
+  <script src="parser.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
